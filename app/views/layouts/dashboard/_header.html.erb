@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+        
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+             <%= link_to "Brand", dashboard_path, class: "brand" %>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li>
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li>    
+                            <a href="#">Applicants</a>
+                        </li>
+                        <li>    
+                            <a href="#">Jobs</a>
+                        </li>
+                        <li>    
+                            <a href="#">Settings</a>
+                        </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                      <% if user_signed_in? %>
+                        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                      <% end %>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>
