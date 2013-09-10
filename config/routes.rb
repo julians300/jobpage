@@ -1,12 +1,13 @@
 Jobpage::Application.routes.draw do
 
+  get "front/index"
   namespace :dashboard do
     resources :jobs
   end
   
   devise_for :users
 
-  get 'dashboard' => 'dashboard#index'
+  get 'dashboard' => 'dashboard#index'  
   get 'about' => 'pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
