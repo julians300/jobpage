@@ -1,7 +1,8 @@
 Jobpage::Application.routes.draw do
 
-  
-  resources :jobs
+  namespace :dashboard do
+    resources :jobs
+  end
 
   devise_for :users
 

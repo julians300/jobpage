@@ -1,5 +1,5 @@
-class JobsController < ApplicationController
-  layout "layouts/dashboard/header"
+class Dashboard::JobsController < ApplicationController
+  layout "layouts/dashboard/dashboard"
   before_filter :authenticate_user!
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
@@ -30,7 +30,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.html { redirect_to dashboard_job_path(@job), notice: 'Job was successfully created.' }
         format.json { render action: 'show', status: :created, location: @job }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class JobsController < ApplicationController
   def update
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+        format.html { redirect_to dashboard_job_path(@job), notice: 'Job was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -58,7 +58,7 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url }
+      format.html { redirect_to dashboard_jobs_url }
       format.json { head :no_content }
     end
   end
@@ -66,7 +66,7 @@ class JobsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
-      @job = Job.find(params[:id])
+      @job = current_user.jobs.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

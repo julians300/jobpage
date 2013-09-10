@@ -16,9 +16,9 @@
       <tr>
         <td><%= job.name %></td>
         <td><%= job.description %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', dashboard_job_path(job) %></td>
+        <td><%= link_to 'Edit', edit_dashboard_job_path(job) %></td>
+        <td><%= link_to 'Destroy', dashboard_job_path(job), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= job.user.email %></td>
       </tr>
     <% end %>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Job', new_job_path, class: 'btn' %>
+<%= link_to 'New Job', new_dashboard_job_path, class: 'btn' %>
