@@ -3,7 +3,7 @@ Jobpage::Application.routes.draw do
   namespace :dashboard do
     resources :jobs
   end
-
+  
   devise_for :users
 
   get 'dashboard' => 'dashboard#index'
