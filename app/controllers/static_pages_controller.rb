@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+	before_filter :login_redir
+
   def index
   end
 
@@ -7,4 +9,13 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def login_redir
+    if user_signed_in?
+    	redirect_to(dashboard_path)
+	else
+    	
+	end
+  end
+
 end

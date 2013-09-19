@@ -1,6 +1,5 @@
 Jobpage::Application.routes.draw do
 
-  get "front/index"
   namespace :dashboard do
     resources :jobs
   end
@@ -10,10 +9,6 @@ Jobpage::Application.routes.draw do
   get 'dashboard' => 'dashboard#index'  
   get 'about' => 'pages#about'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'static_pages#index'
   
   # Example of regular route:
