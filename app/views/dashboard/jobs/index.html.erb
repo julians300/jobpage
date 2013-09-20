@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to job.name, dashboard_job_path(job) %></td>
         <td><%= link_to 'Edit', edit_dashboard_job_path(job) %></td>
-        <td><%= link_to 'Destroy', dashboard_job_path(job), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', dashboard_job_path(job), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

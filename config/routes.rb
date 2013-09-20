@@ -1,17 +1,25 @@
 Jobpage::Application.routes.draw do
 
+  # Devise Routes
+  devise_for :users
+
+  # Dashboard Routes
+  get 'dashboard' => 'dashboard#index'
   namespace :dashboard do
     resources :jobs
   end
-  
-  devise_for :users
-  # devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_up => 'signup'}
 
-  get 'dashboard' => 'dashboard#index'  
-  get 'about' => 'static_pages#about'
-  root 'static_pages#index'
+  # Front Routes
   get 'front/:id' => 'front#index'
   get 'front/:id/job/:id' => 'front#show'
+
+  # Static_Pages Routes
+  get 'about' => 'static_pages#about'
+  get 'features' => 'static_pages#features'
+  get 'pricing' => 'static_pages#pricing'
+
+  # Root Route
+  root 'static_pages#index'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -4,6 +4,12 @@ class StaticPagesController < ApplicationController
   def index
   end
 
+  def features
+  end
+
+  def pricing
+  end
+
   def about
   end
 
