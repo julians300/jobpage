@@ -13,9 +13,8 @@ class StaticPagesController < ApplicationController
   def login_redir
     if user_signed_in?
     	redirect_to(dashboard_path)
-	else
-    	
-	end
+	  else
+	  end
   end
 
 end

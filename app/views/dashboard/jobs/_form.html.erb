@@ -11,14 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :name %><br></div>
+    <div class="span8"><%= f.text_field :name %></div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :description %><br></div>
+    <div class="span8"><%= f.text_area :description, :input_html => {:maxlength => 15, :size => 40} %></div>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

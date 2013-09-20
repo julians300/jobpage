@@ -5,5 +5,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :companyname, presence: true
+
+  #attr_accessible :companyname, :contactfirst, :contactlast, :contactemail, :contactphone, :address, :city, :zip, :country, :state
+
   has_many :jobs
 end

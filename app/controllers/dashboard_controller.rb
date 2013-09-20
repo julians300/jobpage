@@ -4,5 +4,9 @@ class DashboardController < ApplicationController
 
   def index
   end
+
+  def company_settings
+  	
+  end
   
 end
