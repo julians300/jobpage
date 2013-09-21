@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   #attr_accessible :companyname, :contactfirst, :contactlast, :contactemail, :contactphone, :address, :city, :zip, :country, :state
 
   has_many :jobs
+  has_many :applicants, through: :jobs
 end

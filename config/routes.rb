@@ -7,6 +7,7 @@ Jobpage::Application.routes.draw do
   get 'dashboard' => 'dashboard#index'
   namespace :dashboard do
     resources :jobs
+    resources :job_applications
   end
 
   # Front Routes
