@@ -1,5 +1,6 @@
 Jobpage::Application.routes.draw do
 
+ 
   # Devise Routes
   devise_for :users
 
@@ -8,6 +9,7 @@ Jobpage::Application.routes.draw do
   namespace :dashboard do
     resources :jobs
     resources :job_applications
+    get "settings" => "settings#index"
   end
 
   # Front Routes

@@ -1,10 +1,9 @@
-<h1>Listing job_applications</h1>
+<h1>Job Applications</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -13,10 +12,9 @@
   <tbody>
     <% @job_applications.each do |job_application| %>
       <tr>
-        <td><%= job_application.name %></td>
-        <td><%= link_to 'Show', job_application %></td>
-        <td><%= link_to 'Edit', edit_job_application_path(job_application) %></td>
-        <td><%= link_to 'Destroy', job_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to job_application.name, dashboard_job_application_path(job_application) %></td>
+        <td><%= link_to 'Edit', edit_dashboard_job_application_path(job_application) %></td>
+        <td><%= link_to 'Destroy', dashboard_job_application_path(job_application), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

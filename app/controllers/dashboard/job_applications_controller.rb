@@ -30,11 +30,11 @@ class Dashboard::JobApplicationsController < ApplicationController
 
     respond_to do |format|
       if @job_application.save
-        format.html { redirect_to @job_application, notice: 'Job application was successfully created.' }
+        format.html { redirect_to dashboard_job_application_path(@job_application), notice: 'Job application was successfully created.' }
         format.json { render action: 'show', status: :created, location: @job_application }
       else
         format.html { render action: 'new' }
-        format.json { render json: @job_application.errors, status: :unprocessable_entity }
+        format.json { render json: dashboard_job_application_path(@job_application).errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,11 +44,11 @@ class Dashboard::JobApplicationsController < ApplicationController
   def update
     respond_to do |format|
       if @job_application.update(job_application_params)
-        format.html { redirect_to @job_application, notice: 'Job application was successfully updated.' }
+        format.html { redirect_to dashboard_job_application_path(@job_application), notice: 'Job application was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @job_application.errors, status: :unprocessable_entity }
+        format.json { render json: dashboard_job_application_path(@job_application).errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,7 +58,7 @@ class Dashboard::JobApplicationsController < ApplicationController
   def destroy
     @job_application.destroy
     respond_to do |format|
-      format.html { redirect_to job_applications_url }
+      format.html { redirect_to dashboard_job_applications_url }
       format.json { head :no_content }
     end
   end

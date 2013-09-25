@@ -34,7 +34,7 @@ class Dashboard::JobsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @job }
       else
         format.html { render action: 'new' }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
+        format.json { render json: dashboard_job_path(@job).errors, status: :unprocessable_entity }
       end
     end
   end

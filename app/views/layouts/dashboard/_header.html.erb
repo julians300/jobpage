@@ -21,17 +21,20 @@
                             <%= link_to "Jobs", dashboard_jobs_path %>
                         </li>
                         <li>    
-                            <a href="#">Company</a>
-                        </li>
-                        <li>    
-                            <%= link_to 'Account', edit_user_registration_path %>
+                            <a href="#">Appearance</a>
                         </li>
                     </ul>
                     <ul class="nav pull-right">
-                      <% if user_signed_in? %>
+                    <li id="fat-menu" class="dropdown">
+                      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        <li role="presentation"><%= link_to "Edit Company", dashboard_settings_path %></li>
+                        <li role="presentation"><%= link_to 'Edit Account', edit_user_registration_path %></a></li>
+                        <li role="presentation" class="divider"></li>
                         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                      <% end %>
-                    </ul>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
         </div>
     </div>
