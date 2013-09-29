@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-             <%= link_to "Jobbster", dashboard_path, class: "brand" %>
+             <%= link_to current_user.company_name || 'Jobbster', dashboard_path, class: "brand" %>
 
                 <div class="nav-collapse">
                     <ul class="nav">
@@ -28,7 +28,6 @@
                     <li id="fat-menu" class="dropdown">
                       <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
                       <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-                        <li role="presentation"><%= link_to "Edit Company", dashboard_settings_path %></li>
                         <li role="presentation"><%= link_to 'Edit Account', edit_user_registration_path %></a></li>
                         <li role="presentation" class="divider"></li>
                         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>

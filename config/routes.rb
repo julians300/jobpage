@@ -2,14 +2,13 @@ Jobpage::Application.routes.draw do
 
  
   # Devise Routes
-  devise_for :users
+  devise_for :users #, :controllers => { :registrations => "users/registrations" }
 
   # Dashboard Routes
   get 'dashboard' => 'dashboard#index'
   namespace :dashboard do
     resources :jobs
     resources :job_applications
-    get "settings" => "settings#index"
   end
 
   # Front Routes
