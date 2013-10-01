@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jobbly - Home</title>
+    <title>Pathwall - <%= @biz.company_name %></title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -15,8 +15,13 @@
 
 
     <div class="container">
-      <img src="http://fillmurray.com/900/300">
+      <img src="http://fillmurray.com/940/300">
       <%= yield %>
+
+      <% if user_signed_in? %>
+      <%= link_to 'dashboard', dashboard_path %>
+      <% else %>
+      <% end %>
     </div>
 
   </body>

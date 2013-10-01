@@ -1,4 +1,4 @@
-<h1><%= @biz.companyname %> Listings</h1>
+<h1><%= @biz.company_name %>'s Listings</h1>
 
 <table class="table table-striped">
   <thead>
@@ -9,7 +9,7 @@
   <tbody>
     <% @bizjobs.each do |job| %>
       <tr>
-        <td><%= link_to job.name, "job_path" %></td>
+        <td><%= link_to job.name, job %></td>
       </tr>
     <% end %>
   </tbody>

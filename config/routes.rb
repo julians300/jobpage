@@ -1,6 +1,5 @@
 Jobpage::Application.routes.draw do
 
- 
   # Devise Routes
   devise_for :users #, :controllers => { :registrations => "users/registrations" }
 
@@ -12,8 +11,10 @@ Jobpage::Application.routes.draw do
   end
 
   # Front Routes
-  get 'front/:id' => 'front#index'
-  get 'front/:id/job/:id' => 'front#show'
+  resources :jobs
+  match '', to: 'front#index', constraints: {subdomain: /.+/}, via: [:get]
+  get 'job' => 'front#show'
+
 
   # Static_Pages Routes
   get 'about' => 'static_pages#about'

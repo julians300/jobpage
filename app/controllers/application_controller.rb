@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
       u.permit(:email, :password, :password_confirmation)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:email, :password, :password_confirmation, :current_password, :company_name)
+      u.permit(:email, :password, :password_confirmation, :current_password, :company_name, :subdomain)
     end
+  end
+
+  def load_biz
+    @biz = User.find_by_subdomain!(request.subdomain)
   end
 end

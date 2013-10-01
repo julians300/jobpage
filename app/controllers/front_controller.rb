@@ -1,13 +1,12 @@
 class FrontController < ApplicationController
   layout "front/front"
+  before_filter :load_biz
 
   def index
-  	@biz = User.find_by_id(params[:id])
   	@bizjobs = @biz.jobs.all
   end
 
   def show
-  	@biz = User.find_by_id(params[:id])
-  	@job = @biz.jobs.find_by_name(params[:name])
+  	@job = @biz.jobs.find(params[:id])
   end
 end
