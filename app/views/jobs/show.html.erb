@@ -8,27 +8,27 @@
 </p>
 <p>
   <strong>Job Skills</strong><br />
-  HTML, CSS, Ruby, Ruby on Rails, Git, 
+  <%= @job.jobskills %>
 </p>
 <p>
   <strong>Job Location</strong><br />
-  San Antonio, TX
+  <%= @job.joblocation %>
 </p>
 <p>
   <strong>Employment Type</strong><br />
-  Contract
+  <%= @job.employmenttype %>
 </p>
 <p>
   <strong>Job Length</strong><br />
-  9 months
+  <%= @job.joblength %>
 </p>
 <p>
   <strong>Pay Rate</strong><br />
-  85k
+  <%= @job.payrate %>
 </p>
 <p>
   <strong>Travel Required</strong><br />
-  no
+  <%= @job.travelrequired %>
 </p>
 
-
+<%= link_to 'Apply For This Job', new_job_application_path, class: 'btn' %>

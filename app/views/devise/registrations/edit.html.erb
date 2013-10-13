@@ -6,6 +6,7 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
     <%= f.input :company_name, :required => false %>
+    <%= f.input :company_description, :required => false %>
     <%= f.input :subdomain, :required => false %>
     <%= f.input :password, :autocomplete => "off", :required => false %>
     <%= f.input :password_confirmation, :required => false %>

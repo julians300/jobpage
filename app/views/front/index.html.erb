@@ -1,11 +1,12 @@
 <h1><%= @biz.company_name %>'s Listings</h1>
 
+<p><%= @biz.company_description %></p>
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
   </thead>
-
   <tbody>
     <% @bizjobs.each do |job| %>
       <tr>

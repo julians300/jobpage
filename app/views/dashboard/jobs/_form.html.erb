@@ -19,6 +19,31 @@
     <div class="span4"><%= f.label :description %><br></div>
     <div class="span8"><%= f.text_area :description, :input_html => {:maxlength => 15, :size => 40} %></div>
   </div>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :jobskills %><br></div>
+    <div class="span8"><%= f.text_field :jobskills %></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :joblocation %><br></div>
+    <div class="span8"><%= f.text_field :joblocation %></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :employmenttype %><br></div>
+    <div class="span8"><%= f.text_field :employmenttype %></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :joblength %><br></div>
+    <div class="span8"><%= f.text_field :joblength %></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :payrate %><br></div>
+    <div class="span8"><%= f.text_field :payrate %></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4"><%= f.label :travelrequired %><br></div>
+    <div class="span8"><%= f.text_field :travelrequired %></div>
+  </div>
+
 
   <div class="actions">
     <%= f.submit %>

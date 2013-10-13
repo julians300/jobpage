@@ -5,16 +5,18 @@ Jobpage::Application.routes.draw do
 
   # Dashboard Routes
   get 'dashboard' => 'dashboard#index'
+  
   namespace :dashboard do
     resources :jobs
     resources :job_applications
+    get 'appearance' => 'appearance#index'
   end
 
   # Front Routes
   resources :jobs
+  resources :job_applications
   match '', to: 'front#index', constraints: {subdomain: /.+/}, via: [:get]
   get 'job' => 'front#show'
-
 
   # Static_Pages Routes
   get 'about' => 'static_pages#about'

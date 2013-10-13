@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130930011922) do
+ActiveRecord::Schema.define(version: 20131011033956) do
 
   create_table "job_applications", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "job_id"
   end
 
   create_table "jobs", force: true do |t|
@@ -25,6 +26,12 @@ ActiveRecord::Schema.define(version: 20130930011922) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "jobskills"
+    t.string   "joblocation"
+    t.string   "employmenttype"
+    t.string   "joblength"
+    t.string   "payrate"
+    t.string   "travelrequired"
   end
 
   create_table "users", force: true do |t|
@@ -51,6 +58,7 @@ ActiveRecord::Schema.define(version: 20130930011922) do
     t.string   "contact_phone"
     t.boolean  "enable_subdomain"
     t.string   "subdomain"
+    t.text     "company_description"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

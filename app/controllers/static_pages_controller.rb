@@ -1,7 +1,5 @@
 class StaticPagesController < ApplicationController
-  
-  # Redirect user to Dashboard or Homepage if signed in
-	before_filter :login_redir
+	before_filter :login_redir # Redirect user to Dashboard or Homepage if signed in
 
   def index
   end

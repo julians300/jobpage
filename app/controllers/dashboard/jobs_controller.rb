@@ -12,6 +12,7 @@ class Dashboard::JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @job = current_user.jobs.find(params[:id])
   end
 
   # GET /jobs/new
@@ -71,6 +72,7 @@ class Dashboard::JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:name, :description)
+      params.require(:job).permit(:name, :description, :jobskills, :joblocation, :employmenttype, :joblength, :payrate, :travelrequired)
     end
+
 end
