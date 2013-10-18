@@ -6,7 +6,6 @@ class DashboardController < ApplicationController
   end
 
   def company_settings
-  	
   end
   
 end

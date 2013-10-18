@@ -15,9 +15,11 @@
 
     <div class="container">
       <%= image_tag "default-banner.png" %>
+      <%= render 'layouts/flash' %>
       <%= yield %>
       <% if authenticate_owner! %>
-      <%= link_to "dashboard", dashboard_path %>
+        <%= link_to "dashboard", dashboard_path %>
+        <% else %>
       <% end %>
     </div>
   </body>

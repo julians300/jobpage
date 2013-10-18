@@ -1,6 +1,6 @@
 class Dashboard::AppearanceController < ApplicationController
 	layout "layouts/dashboard/dashboard"
-	def index
-		
+
+	def index	
 	end
 end

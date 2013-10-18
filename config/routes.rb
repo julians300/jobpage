@@ -13,9 +13,10 @@ Jobpage::Application.routes.draw do
   end
 
   # Front Routes
-  resources :jobs
-  resources :job_applications
-  match '', to: 'front#index', constraints: {subdomain: /.+/}, via: [:get]
+  resources :jobs do
+    resources :job_applications
+  end
+  match '', to: 'front#index', constraints: {subdomain: /.+/}, via: [:get] #Maps Subdomain User setting to subdomain page
   get 'job' => 'front#show'
 
   # Static_Pages Routes
