@@ -3,12 +3,11 @@ class JobApplicationsController < ApplicationController
   before_action :set_job_application, only: [:show, :edit, :update, :destroy]
   before_filter :load_biz
 
-  def index
-    @job_applications = JobApplication.all
-  end
+  # def index
+  #   @job_applications = JobApplication.all
+  # end
 
   def show
-
   end
 
   def new
@@ -26,7 +25,7 @@ class JobApplicationsController < ApplicationController
   # POST /job_applications.json
   def create
     @job = Job.find(params[:job_id])
-    @job_application = JobApplication.new(job_application_params)
+    @job_application = JobApplication.find_by_user_id(params[:subdomain]).new(job_application_params)
     if @job_application.save
     end
     # @job_application = JobApplication.new(job_application_params)

@@ -74,5 +74,4 @@ class Dashboard::JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:name, :description, :jobskills, :joblocation, :employmenttype, :joblength, :payrate, :travelrequired)
     end
-
 end

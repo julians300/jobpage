@@ -6,17 +6,18 @@ class Dashboard::JobApplicationsController < ApplicationController
   # GET /job_applications
   # GET /job_applications.json
   def index
-    @job_applications = JobApplication.all
+    @job_applications = current_user.job_applications.all
   end
 
   # GET /job_applications/1
   # GET /job_applications/1.json
   def show
+    @job = current_user.job_applications.find(params[:id])
   end
 
   # GET /job_applications/new
   def new
-    @job_application = JobApplication.new
+    @job_application = current_user.job_applications.new
   end
 
   # GET /job_applications/1/edit
@@ -26,7 +27,7 @@ class Dashboard::JobApplicationsController < ApplicationController
   # POST /job_applications
   # POST /job_applications.json
   def create
-    @job_application = JobApplication.new(job_application_params)
+    @job_application = current_user.job_applications.new(job_application_params)
 
     respond_to do |format|
       if @job_application.save
@@ -66,7 +67,7 @@ class Dashboard::JobApplicationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job_application
-      @job_application = JobApplication.find(params[:id])
+      @job_application = current_user.job_applications.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
